@@ -351,22 +351,6 @@ function HomePage() {
         whileInView="show"
         viewport={{ once: true, amount: 0.35 }}
       >
-        <motion.span
-          className="hero-float hero-float-one"
-          animate={{ y: [0, -10, 0], rotate: [0, 4, 0] }}
-          transition={{ duration: 4.6, repeat: Infinity, ease: 'easeInOut' }}
-          aria-hidden="true"
-        >
-          <Sparkles />
-        </motion.span>
-        <motion.span
-          className="hero-float hero-float-two"
-          animate={{ y: [0, 8, 0], rotate: [0, -5, 0] }}
-          transition={{ duration: 5.1, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
-          aria-hidden="true"
-        >
-          <GraduationCap />
-        </motion.span>
         <motion.div variants={fadeInUp} className="hero-panel">
           <p className="eyebrow">Universidad · Facultad de Humanidades y Educación</p>
           <h1>¡Bienvenidos!</h1>
@@ -406,35 +390,6 @@ function HomePage() {
             los retos del país desde el conocimiento humanista.
           </p>
         </motion.div>
-      </motion.section>
-
-      <motion.section
-        className="stats"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.35 }}
-      >
-        {[
-          ['10', 'Escuelas académicas', Building2],
-          ['80+', 'Docentes investigadores', Users],
-          ['40+', 'Proyectos culturales', Theater],
-          ['6k+', 'Estudiantes activos', GraduationCap],
-        ].map(([value, label, Icon]) => (
-          <motion.article
-            key={label}
-            variants={fadeInUp}
-            whileHover={{ y: -6, scale: 1.015 }}
-            transition={{ duration: 0.2 }}
-            className="stat-card"
-          >
-            <p className="stat-icon" aria-hidden="true">
-              <Icon />
-            </p>
-            <h2>{value}</h2>
-            <p>{label}</p>
-          </motion.article>
-        ))}
       </motion.section>
 
       <motion.section
