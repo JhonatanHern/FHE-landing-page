@@ -352,10 +352,10 @@ function HomePage() {
         viewport={{ once: true, amount: 0.35 }}
       >
         <motion.div variants={fadeInUp} className="hero-panel">
-          <p className="eyebrow">Universidad · Facultad de Humanidades y Educación</p>
+          <p className="eyebrow">Universidad Central de Venezuela · Facultad de Humanidades y Educación</p>
           <h1>¡Bienvenidos!</h1>
           <h2 className="hero-question">
-            ¿Te gustaría ser un humanista formado en la universidad número 1 del país?
+            ¿Te gustaría ser un humanista formado en la universidad #1 del país?
           </h2>
           <p className="hero-text">
             Somos una comunidad académica comprometida con la excelencia, la investigación
