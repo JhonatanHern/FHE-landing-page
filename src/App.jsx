@@ -28,7 +28,7 @@ import {
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
-import { Link, NavLink, Navigate, Route, Routes, useParams } from 'react-router-dom'
+import { Link, NavLink, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -292,6 +292,14 @@ function SiteLayout({ children }) {
 }
 
 function HomePage() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.state?.scrollToTop) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, [location.state])
+
   return (
     <>
       <motion.section
@@ -640,10 +648,7 @@ function SchoolPage() {
       </section>
 
       <div className="hero-actions">
-        <a className="btn btn-primary" href="#">
-          Solicitar información
-        </a>
-        <Link className="btn btn-ghost" to="/">
+        <Link className="btn btn-ghost" to="/" state={{ scrollToTop: true }}>
           Volver al inicio
         </Link>
       </div>
