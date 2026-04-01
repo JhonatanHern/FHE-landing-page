@@ -391,9 +391,9 @@ function HomePage() {
         id="escuelas"
         className="section"
         variants={staggerContainer}
-        initial="hidden"
+        initial="show"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.05 }}
       >
         <motion.div variants={fadeInUp} className="section-head">
           <p className="eyebrow">Escuelas de Humanidades y Educación</p>
