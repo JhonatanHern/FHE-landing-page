@@ -370,7 +370,7 @@ function HomePage() {
           ['80+', 'Docentes investigadores', Users],
           ['40+', 'Proyectos culturales', Theater],
           ['6k+', 'Estudiantes activos', GraduationCap],
-        ].map(([value, label]) => (
+        ].map(([value, label, Icon]) => (
           <motion.article
             key={label}
             variants={fadeInUp}
