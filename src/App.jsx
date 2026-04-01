@@ -15,6 +15,7 @@ import {
   Mail,
   MapPin,
   MapPinned,
+  Menu,
   Newspaper,
   Palette,
   PenSquare,
@@ -24,6 +25,7 @@ import {
   Sparkles,
   Theater,
   Users,
+  X,
 } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
@@ -252,7 +254,11 @@ const markdownComponents = {
   a: ({ ...props }) => <a className="md-link" {...props} />,
   blockquote: ({ ...props }) => <blockquote className="md-quote" {...props} />,
   code: ({ ...props }) => <code className="md-code" {...props} />,
-  table: ({ ...props }) => <table className="md-table" {...props} />,
+  table: ({ ...props }) => (
+    <div className="md-table-wrap">
+      <table className="md-table" {...props} />
+    </div>
+  ),
   thead: ({ ...props }) => <thead className="md-thead" {...props} />,
   tbody: ({ ...props }) => <tbody className="md-tbody" {...props} />,
   tr: ({ ...props }) => <tr className="md-tr" {...props} />,
@@ -261,24 +267,60 @@ const markdownComponents = {
 }
 
 function SiteLayout({ children }) {
+  const location = useLocation()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSchoolsOpen, setIsSchoolsOpen] = useState(false)
+
+  useEffect(() => {
+    setIsMenuOpen(false)
+    setIsSchoolsOpen(false)
+  }, [location.pathname])
+
   return (
     <main className="landing">
       <header className="topbar">
         <Link className="brand" to="/">
           <img src="/assets/logo.png" alt="Logo Humanidades y Educación" className="brand-logo" />
-          Facultad de Humanidades y Educación
+          <span className="brand-title">Facultad de Humanidades y Educación</span>
         </Link>
-        <nav className="main-nav">
-          <NavLink to="/">Inicio</NavLink>
-          <NavLink to="/contacto">Contacto</NavLink>
-          <div className="dropdown">
-            <button className="dropdown-trigger" type="button" aria-haspopup="menu">
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((value) => !value)}
+        >
+          {isMenuOpen ? <X /> : <Menu />}
+        </button>
+        <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
+          <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
+            Inicio
+          </NavLink>
+          <NavLink to="/contacto" onClick={() => setIsMenuOpen(false)}>
+            Contacto
+          </NavLink>
+          <div className={`dropdown ${isSchoolsOpen ? 'open' : ''}`}>
+            <button
+              className="dropdown-trigger"
+              type="button"
+              aria-haspopup="menu"
+              aria-expanded={isSchoolsOpen}
+              onClick={() => setIsSchoolsOpen((value) => !value)}
+            >
               Escuelas
             </button>
             <ul className="dropdown-menu" role="menu">
               {schools.map((school) => (
                 <li key={school.slug}>
-                  <Link to={`/escuelas/${school.slug}`}>{school.name}</Link>
+                  <Link
+                    to={`/escuelas/${school.slug}`}
+                    onClick={() => {
+                      setIsMenuOpen(false)
+                      setIsSchoolsOpen(false)
+                    }}
+                  >
+                    {school.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -487,6 +529,10 @@ function SchoolPage() {
 
   const [pensumMarkdown, setPensumMarkdown] = useState('')
   const [pensumStatus, setPensumStatus] = useState('loading')
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [normalizedSlug])
 
   useEffect(() => {
     let cancelled = false

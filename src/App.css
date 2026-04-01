@@ -34,6 +34,24 @@
   gap: 1.3rem;
 }
 
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text-h);
+  border-radius: 0.6rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu-toggle svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
 .topbar a,
 .dropdown-trigger {
   display: inline-flex;
@@ -574,10 +592,18 @@
   background: color-mix(in srgb, var(--accent) 10%, var(--panel-soft));
 }
 
-.md-table {
+.md-table-wrap {
   width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.85rem 0;
+}
+
+.md-table {
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
-  margin: 5.85rem 0;
+  margin: 0;
   border: 1px solid var(--border);
   border-radius: 0.7rem;
   overflow: hidden;
@@ -809,6 +835,7 @@
     gap: 1rem;
     flex-direction: column;
     align-items: flex-start;
+    padding-bottom: 0;
   }
 
   .stats {
@@ -854,6 +881,22 @@
     width: min(1120px, 100% - 1.4rem);
   }
 
+  .topbar {
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .brand-title {
+    display: none;
+  }
+
   .hero {
     min-height: 74vh;
     padding: 3rem 0 2rem;
@@ -886,9 +929,26 @@
     grid-template-columns: 1fr;
   }
 
-  .main-nav {
-    flex-wrap: wrap;
-    gap: 0.9rem 1.1rem;
+  .topbar .main-nav {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0 0.2rem;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: max-height 0.38s ease, opacity 0.22s ease, transform 0.32s ease;
+  }
+
+  .topbar .main-nav.open {
+    max-height: 70vh;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .footer {
@@ -922,18 +982,26 @@
 
   .dropdown {
     width: 100%;
+    display: block;
+  }
+
+  .dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .dropdown ul {
     width: 100%;
     position: static;
-    margin-top: 0.5rem;
+    margin-top: 0.35rem;
     opacity: 1;
     transform: none;
     pointer-events: auto;
     display: none;
+    box-shadow: none;
   }
 
+  .dropdown.open .dropdown-menu,
   .dropdown:hover .dropdown-menu,
   .dropdown:focus-within .dropdown-menu {
     display: block;
