@@ -65,26 +65,11 @@ function Footer() {
             Contacto
           </h4>
           <ul className="footer-list">
-            <li>
+            <li style={{cursor:"pointer"}} onClick={()=>{window.open("https://www.google.com/maps/place/F4R6%2B98G+Facultad+de+Humanidades+y+Educaci%C3%B3n,+Pasillo+de+Ingenier%C3%ADa,+Caracas+1051,+Distrito+Capital/@10.4909441,-66.8891612,15z/data=!4m6!3m5!1s0x8c2a58d985111c81:0x554e4496885c9d20!8m2!3d10.4909441!4d-66.8891612!16s%2Fg%2F1tgfxny9?g_ep=Eg1tbF8yMDI2MDMzMF8wIOC7DCoASAJQAg%3D%3D", "_blank")}}>
               <span className="footer-item-icon" aria-hidden="true">
                 <MapPin />
               </span>
-              Avenida Universidad, Edificio Central, Piso 2, Caracas, Venezuela.
-            </li>
-            <li>
-              <span className="footer-item-icon" aria-hidden="true">
-                <Phone />
-              </span>
-              <a href="tel:+582125550101">+58 212 555 0101</a> ·{' '}
-              <a href="tel:+582125550142">+58 212 555 0142</a>
-            </li>
-            <li>
-              <span className="footer-item-icon" aria-hidden="true">
-                <Mail />
-              </span>
-              <a href="mailto:contacto.humanidades@universidad.edu.ve">
-                contacto.humanidades@universidad.edu.ve
-              </a>
+              Av. Los Ilustres, Ciudad Universitaria, Edif. Facultad de Humanidades y Educación, Los Chaguaramos, Caracas Venezuela.
             </li>
             <li>
               <span className="footer-item-icon" aria-hidden="true">
@@ -95,7 +80,7 @@ function Footer() {
             <li className="footer-social-row">
               <a
                 className="footer-social-link"
-                href="https://instagram.com/humanidadesuniversidad"
+                href="https://www.instagram.com/fhyeucv"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -104,7 +89,7 @@ function Footer() {
               </a>
               <a
                 className="footer-social-link"
-                href="https://facebook.com"
+                href="https://www.facebook.com/fheucv"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"

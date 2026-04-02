@@ -443,6 +443,19 @@
   transform: translateX(2px);
 }
 
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--text-h);
+}
+
+.social-link:hover {
+  text-decoration: none;
+  color: var(--text-h);
+}
+
 .split {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -476,6 +489,8 @@
 
 .school-header-visual {
   margin-bottom: 0.85rem;
+  padding: 2em;
+  background-size: cover;
 }
 
 .school-logo-hero,
@@ -505,6 +520,39 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.school-description {
+  margin-top: 2rem;
+  border-radius: 0.95rem;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  padding: 1.25rem;
+}
+
+.school-description h3 {
+  margin: 0.35rem 0 1rem;
+  color: var(--text-h);
+}
+
+.school-description-content {
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.school-description-content h4 {
+  margin: 1.05rem 0 0.45rem;
+  color: var(--text-h);
+  font-size: 1.02rem;
+}
+
+.school-description-content p {
+  margin: 0.55rem 0;
+}
+
+.school-description-content ul {
+  margin: 0.5rem 0;
+  padding-left: 1.2rem;
+}
+
 .school-pensum {
   margin-top: 2rem;
   border-radius: 0.95rem;
@@ -516,6 +564,17 @@
 .school-pensum h3 {
   margin: 0.35rem 0 1rem;
   color: var(--text-h);
+}
+
+.pensum-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.pensum-downloads .btn {
+  gap: 0.45rem;
 }
 
 .school-pensum-content {
