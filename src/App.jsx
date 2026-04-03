@@ -612,6 +612,97 @@ const schoolDescriptionBlocks = {
   ],
 }
 
+const schoolSocialLinks = {
+  artes: [
+    {
+      label: 'Centro de Estudiantes de Artes',
+      url: 'https://www.instagram.com/ceea_ucv?igsh=OHh3M25iZTdkN3py',
+      handle: '@ceea_ucv',
+    },
+    {
+      label: 'Escuela de Artes',
+      url: 'https://www.instagram.com/artes_ucv?igsh=MWc2dnJsNzVvOWF5Yw==',
+      handle: '@artes_ucv',
+    },
+  ],
+  'bibliotecologia-archivologia': [
+    {
+      label: 'Centro de Estudiantes de Bibliotecología',
+      url: 'https://www.instagram.com/ceebaucv?igsh=ZjlwOXpseTE0bHJ4',
+      handle: '@ceebaucv',
+    },
+    {
+      label: 'Comisión de Apoyo al Estudiante con Discapacidad',
+      url: 'https://www.instagram.com/caedeba?igsh=MTRlcWtvZDZ1a2d6cw==',
+      handle: '@caedeba',
+    },
+  ],
+  'comunicacion-social': [
+    {
+      label: 'Escuela de Comunicación Social',
+      url: 'https://www.instagram.com/ecs_ucv?igsh=aGRoMHBwaDFmb2tt',
+      handle: '@ecs_ucv',
+    },
+  ],
+  educacion: [
+    {
+      label: 'Escuela de Educación',
+      url: 'https://www.instagram.com/escueladeeducacionucv?igsh=MXFqam50MzNiM3ZsdQ==',
+      handle: '@escueladeeducacionucv',
+    },
+    {
+      label: 'Centro de Estudiantes de Educación',
+      url: 'https://www.instagram.com/ceee.ucv?igsh=MTFiMHNrNWt3aGx4bg==',
+      handle: '@ceee.ucv',
+    },
+  ],
+  filosofia: [
+    {
+      label: 'Centro de Estudiantes de Filosofía',
+      url: 'https://www.instagram.com/cee_filosofia?igsh=ZWptaTRvd3czOGIw',
+      handle: '@cee_filosofia',
+    },
+    {
+      label: 'Escuela de Filosofía',
+      url: 'https://www.instagram.com/escuelafilosofiaucv?igsh=NWs1cGZwODFmY2hr',
+      handle: '@escuelafilosofiaucv',
+    },
+  ],
+  historia: [
+    {
+      label: 'Escuela de Historia',
+      url: 'https://www.instagram.com/ceehucv?igsh=YzZ1M2htZ3M0N2Nt',
+      handle: '@ceehucv',
+    },
+  ],
+  'idiomas-modernos': [
+    {
+      label: 'Escuela de Idiomas Modernos',
+      url: 'https://www.instagram.com/ce_eim?igsh=bzIyenJldXRhdjBs',
+      handle: '@ce_eim',
+    },
+  ],
+  letras: [
+    {
+      label: 'Centro de Estudiantes de Letras',
+      url: 'https://www.instagram.com/ceelucv?igsh=MW9yc2ZlbXZnOTk4bg==',
+      handle: '@ceelucv',
+    },
+    {
+      label: 'Escuela de Letras',
+      url: 'https://www.instagram.com/escueladeletrasucv?igsh=Yzh0dGdqcDBlODNw',
+      handle: '@escueladeletrasucv',
+    },
+  ],
+  psicologia: [
+    {
+      label: 'Centro de Estudiantes de Psicología',
+      url: 'https://www.instagram.com/ceep.ucv?igsh=MXRxMWlxajFldXFwMg==',
+      handle: '@ceep.ucv',
+    },
+  ],
+}
+
 const isHtmlFallback = (value) => {
   const sample = value.trim().slice(0, 800).toLowerCase()
   return (
@@ -953,6 +1044,7 @@ function SchoolPage() {
   const schoolLogo = schoolLogos[school.slug]
   const pensumDownloadSources = schoolPensumDownloadSources[school.slug] ?? []
   const descriptionBlocks = schoolDescriptionBlocks[school.slug] ?? []
+  const socialLinks = schoolSocialLinks[school.slug] ?? []
 
   return (
     <motion.section
@@ -1016,10 +1108,28 @@ function SchoolPage() {
       </div>
 
       <section className="school-description">
-        <p className="eyebrow">Descripción de la escuela</p>
+        <p className="eyebrow">Quiénes somos</p>
         <h3>Conoce la carrera</h3>
         <div className="school-description-content">{descriptionBlocks}</div>
       </section>
+
+      {socialLinks.length > 0 && (
+        <section className="school-social">
+          <p className="eyebrow">Redes oficiales y estudiantiles</p>
+          <h3>Redes de la escuela</h3>
+          <div className="school-social-grid">
+            {socialLinks.map((link) => (
+              <a key={link.url} className="school-social-link" href={link.url} target="_blank" rel="noreferrer">
+                <FaInstagram className="icon-svg" aria-hidden="true" />
+                <span>
+                  <strong>{link.label}</strong>
+                  <small>{link.handle}</small>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="school-pensum">
         <p className="eyebrow">Oferta académica detallada</p>
