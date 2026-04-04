@@ -1,23 +1,22 @@
 import { motion } from 'framer-motion'
 import { BookOpen, Briefcase, Download, Rocket } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { FaInstagram } from 'react-icons/fa'
-import ReactMarkdown from 'react-markdown'
-import rehypeRaw from 'rehype-raw'
-import remarkGfm from 'remark-gfm'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { markdownComponents } from '../constants/markdownComponents'
 import {
   mergedCareerSlugMap,
   schoolDescriptionBlocks,
   schoolIcons,
   schoolLogos,
   schoolPensumDownloadSources,
-  schoolPensumSources,
   schools,
   schoolSocialLinks,
 } from '../constants/schoolsData'
-import { getPensumUrl, isHtmlFallback, normalizePensumContent } from '../utils/pensum'
+// import ReactMarkdown from 'react-markdown'
+// import rehypeRaw from 'rehype-raw'
+// import remarkGfm from 'remark-gfm'
+// import { markdownComponents } from '../constants/markdownComponents'
+// import { getPensumUrl, isHtmlFallback, normalizePensumContent } from '../utils/pensum'
 
 const Motion = motion
 
@@ -27,79 +26,79 @@ function SchoolPage() {
   const normalizedSlug = mergedCareerSlugMap[slug] ?? slug
   const school = schools.find((item) => item.slug === normalizedSlug)
 
-  const [pensumMarkdown, setPensumMarkdown] = useState('')
-  const [pensumStatus, setPensumStatus] = useState('loading')
+  // const [pensumMarkdown, setPensumMarkdown] = useState('')
+  // const [pensumStatus, setPensumStatus] = useState('loading')
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [normalizedSlug])
 
-  useEffect(() => {
-    let cancelled = false
+  // useEffect(() => {
+  //   let cancelled = false
 
-    const loadPensumMarkdown = async () => {
-      if (!school) {
-        setPensumStatus('missing')
-        setPensumMarkdown('')
-        return
-      }
+  //   const loadPensumMarkdown = async () => {
+  //     if (!school) {
+  //       setPensumStatus('missing')
+  //       setPensumMarkdown('')
+  //       return
+  //     }
 
-      const sources = schoolPensumSources[school.slug] ?? []
-      if (sources.length === 0) {
-        setPensumStatus('missing')
-        setPensumMarkdown('')
-        return
-      }
+  //     const sources = schoolPensumSources[school.slug] ?? []
+  //     if (sources.length === 0) {
+  //       setPensumStatus('missing')
+  //       setPensumMarkdown('')
+  //       return
+  //     }
 
-      setPensumStatus('loading')
+  //     setPensumStatus('loading')
 
-      const blocks = []
-      for (const source of sources) {
-        try {
-          const response = await fetch(getPensumUrl(source.file))
-          if (!response.ok) {
-            continue
-          }
+  //     const blocks = []
+  //     for (const source of sources) {
+  //       try {
+  //         const response = await fetch(getPensumUrl(source.file))
+  //         if (!response.ok) {
+  //           continue
+  //         }
 
-          const content = normalizePensumContent(await response.text())
-          if (!content || isHtmlFallback(content)) {
-            continue
-          }
+  //         const content = normalizePensumContent(await response.text())
+  //         if (!content || isHtmlFallback(content)) {
+  //           continue
+  //         }
 
-          blocks.push({ title: source.title, content })
-        } catch {
-          continue
-        }
-      }
+  //         blocks.push({ title: source.title, content })
+  //       } catch {
+  //         continue
+  //       }
+  //     }
 
-      if (cancelled) {
-        return
-      }
+  //     if (cancelled) {
+  //       return
+  //     }
 
-      if (blocks.length === 0) {
-        setPensumStatus('missing')
-        setPensumMarkdown('')
-        return
-      }
+  //     if (blocks.length === 0) {
+  //       setPensumStatus('missing')
+  //       setPensumMarkdown('')
+  //       return
+  //     }
 
-      if (blocks.length === 1) {
-        setPensumMarkdown(blocks[0].content)
-      } else {
-        setPensumMarkdown(
-          blocks
-            .map((block) => `## ${block.title}\n\n${block.content}`)
-            .join('\n\n---\n\n'),
-        )
-      }
-      setPensumStatus('ready')
-    }
+  //     if (blocks.length === 1) {
+  //       setPensumMarkdown(blocks[0].content)
+  //     } else {
+  //       setPensumMarkdown(
+  //         blocks
+  //           .map((block) => `## ${block.title}\n\n${block.content}`)
+  //           .join('\n\n---\n\n'),
+  //       )
+  //     }
+  //     setPensumStatus('ready')
+  //   }
 
-    loadPensumMarkdown()
+  //   loadPensumMarkdown()
 
-    return () => {
-      cancelled = true
-    }
-  }, [school])
+  //   return () => {
+  //     cancelled = true
+  //   }
+  // }, [school])
 
   if (mergedCareerSlugMap[slug]) {
     return <Navigate to={`/escuelas/${normalizedSlug}`} replace />
@@ -201,8 +200,7 @@ function SchoolPage() {
       )}
 
       <section className="school-pensum">
-        <p className="eyebrow">Oferta académica detallada</p>
-        <h3>Pensum completo</h3>
+        <p className="eyebrow" style={{marginBottom:'1em'}}>Oferta académica detallada (Pensum)</p>
 
         {pensumDownloadSources.length > 0 && (
           <div className="pensum-downloads">
@@ -214,7 +212,7 @@ function SchoolPage() {
             ))}
           </div>
         )}
-
+{/* 
         {pensumStatus === 'loading' && <p className="muted">Cargando contenido del pensum...</p>}
 
         {pensumStatus === 'missing' && (
@@ -231,7 +229,7 @@ function SchoolPage() {
               {pensumMarkdown}
             </ReactMarkdown>
           </div>
-        )}
+        )} */}
       </section>
 
       <div className="hero-actions">
