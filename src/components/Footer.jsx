@@ -40,19 +40,19 @@ function Footer() {
               <span className="footer-item-icon" aria-hidden="true">
                 <Building2 />
               </span>
-              <a href="#facultad">La facultad</a>
+              <Link to="/#facultad">La facultad</Link>
             </li>
             <li>
               <span className="footer-item-icon" aria-hidden="true">
                 <GraduationCap />
               </span>
-              <a href="#escuelas">Escuelas</a>
+              <Link to="/#escuelas">Escuelas</Link>
             </li>
             <li>
               <span className="footer-item-icon" aria-hidden="true">
                 <Inbox />
               </span>
-              <Link to="/contacto">Contacto</Link>
+              <Link to="/contacto#contacto-top">Contacto</Link>
             </li>
           </ul>
         </div>

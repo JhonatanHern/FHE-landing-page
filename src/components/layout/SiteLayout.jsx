@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { schools } from '../../constants/schoolsData'
 import Footer from '../Footer'
+import RouteScrollHandler from './RouteScrollHandler'
 
 function SiteLayout({ children }) {
   const location = useLocation()
@@ -16,6 +17,7 @@ function SiteLayout({ children }) {
 
   return (
     <main className="landing">
+      <RouteScrollHandler />
       <header className="topbar">
         <Link className="brand" to="/">
           <img src="/assets/logo.png" alt="Logo Humanidades y Educación" className="brand-logo" />

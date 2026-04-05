@@ -7,6 +7,7 @@ const Motion = motion
 function ContactPage() {
   return (
     <Motion.section
+      id="contacto-top"
       className="section school-page"
       initial={{ opacity: 0, y: 22 }}
       animate={{ opacity: 1, y: 0 }}
