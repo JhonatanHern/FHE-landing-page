@@ -9,7 +9,7 @@ import {
   MapPin,
   Phone,
 } from 'lucide-react'
-import { FaFacebookF, FaInstagram } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaTelegramPlane } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 function Footer() {
@@ -70,6 +70,7 @@ function Footer() {
                 <MapPin />
               </span>
               Av. Los Ilustres, Ciudad Universitaria, Edif. Facultad de Humanidades y Educación, Los Chaguaramos, Caracas Venezuela.
+              Código Postal: 1050. Rif: G-20000062-7
             </li>
             <li>
               <span className="footer-item-icon" aria-hidden="true">
@@ -95,6 +96,16 @@ function Footer() {
                 aria-label="Facebook"
               >
                 <FaFacebookF />
+              </a>
+              {/* add telegram */}
+              <a
+                className="footer-social-link"
+                href="https://t.me/fhyeucv"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Telegram"
+              >
+                <FaTelegramPlane />
               </a>
             </li>
           </ul>

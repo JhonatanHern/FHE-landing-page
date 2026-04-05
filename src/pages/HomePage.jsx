@@ -31,10 +31,6 @@ function HomePage() {
           <h2 className="hero-question">
             ¿Te gustaría ser un humanista formado en la universidad #1 del país?
           </h2>
-          <p className="hero-text">
-            Somos una comunidad académica comprometida con la excelencia, la investigación
-            y la formación integral de profesionales.
-          </p>
           <div className="hero-actions">
             <Link className="btn btn-primary" to="/contacto">
               Sí, quiero formar parte
@@ -62,6 +58,38 @@ function HomePage() {
             Nuestra facultad integra docencia, investigación y extensión para responder a
             los retos del país desde el conocimiento humanista.
           </p>
+        </Motion.div>
+
+        <div className="section-break" aria-hidden="true" />
+
+        <Motion.div variants={fadeInUp} className="section-head" style={{ marginTop: '1.2rem' }}>
+          <p className="eyebrow">Historia</p>
+          <h3>Historia de la facultad</h3>
+
+          <div className="history-paragraphs" aria-label="Bloques de historia de la facultad">
+            <div className="history-paragraph-card">
+              <p className="muted">
+                La estructura moderna de la facultad se consolidó en octubre de 1946, bajo el
+                nombre de Facultad de Filosofía y Letras, para profesionalizar las disciplinas
+                humanísticas en Venezuela.
+              </p>
+            </div>
+
+            <div className="history-paragraph-card">
+              <p className="muted">
+                Su primer decano y principal impulsor fue Mariano Picón Salas, quien regresó del
+                exilio con una visión renovada del papel de la universidad en la sociedad.
+              </p>
+            </div>
+
+            <div className="history-paragraph-card">
+              <p className="muted">
+                En su etapa inicial funcionó por secciones. Filosofía inició clases el 14 de octubre
+                de 1946 con 300 inscritos, y su planta docente se fortaleció con intelectuales
+                venezolanos y profesores exiliados de la Guerra Civil Española y la Segunda Guerra Mundial.
+              </p>
+            </div>
+          </div>
         </Motion.div>
       </Motion.section>
 
@@ -93,7 +121,7 @@ function HomePage() {
                 {schoolLogo ? (
                   <img
                     src={schoolLogo.src}
-                    alt={`Logo ${schoolLogo.source === 'oficial' ? 'oficial' : 'de centro de estudiantes'} de ${school.name}`}
+                    alt={`Logo de ${school.name}`}
                     className="school-logo-thumb"
                     loading="lazy"
                   />
@@ -116,30 +144,6 @@ function HomePage() {
             )
           })}
         </div>
-      </Motion.section>
-
-      <Motion.section
-        id="admision"
-        className="section split"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-      >
-        <Motion.div variants={fadeInUp}>
-          <p className="eyebrow">Admisión</p>
-          <h3>Inscripción y acompañamiento académico</h3>
-          <p className="muted">
-            Nuestro proceso orienta a cada aspirante para elegir la escuela adecuada y
-            prepararse para su trayectoria universitaria en la Facultad de Humanidades y Educación.
-          </p>
-        </Motion.div>
-        <Motion.ol variants={fadeInUp} className="steps">
-          <li>Registro en plataforma y selección de escuela.</li>
-          <li>Carga de documentos académicos requeridos.</li>
-          <li>Entrevista o evaluación diagnóstica.</li>
-          <li>Formalización de inscripción y bienvenida institucional.</li>
-        </Motion.ol>
       </Motion.section>
     </>
   )

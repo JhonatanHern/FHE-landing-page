@@ -329,6 +329,30 @@
   color: var(--text-h);
 }
 
+.section-break {
+  margin: 1.4rem 0 0.3rem;
+  border-top: 1px solid var(--border);
+}
+
+.history-paragraphs {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.history-paragraph-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+
+.history-paragraph-card .muted {
+  margin: 0;
+  max-width: none;
+}
+
 .cards-grid {
   margin-top: 1.3rem;
   display: grid;
@@ -981,6 +1005,10 @@
   .footer-slogan-row {
     width: min(1120px, 100% - 2rem);
   }
+
+  .history-paragraphs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -1112,6 +1140,17 @@
   .dropdown:hover .dropdown-menu,
   .dropdown:focus-within .dropdown-menu {
     display: block;
+  }
+
+  .history-paragraphs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding-bottom: 0;
+  }
+
+  .history-paragraph-card {
+    width: 100%;
   }
 }
 

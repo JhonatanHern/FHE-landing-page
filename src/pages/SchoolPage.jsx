@@ -6,6 +6,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import {
   mergedCareerSlugMap,
   schoolDescriptionBlocks,
+  schoolHistoryItems,
   schoolIcons,
   schoolLogos,
   schoolPensumDownloadSources,
@@ -112,6 +113,7 @@ function SchoolPage() {
   const schoolLogo = schoolLogos[school.slug]
   const pensumDownloadSources = schoolPensumDownloadSources[school.slug] ?? []
   const descriptionBlocks = schoolDescriptionBlocks[school.slug] ?? []
+  const historyItems = schoolHistoryItems[school.slug] ?? []
   const socialLinks = schoolSocialLinks[school.slug] ?? []
 
   return (
@@ -128,7 +130,7 @@ function SchoolPage() {
         {schoolLogo ? (
           <img
             src={schoolLogo.src}
-            alt={`Logo ${schoolLogo.source === 'oficial' ? 'oficial' : 'de centro de estudiantes'} de ${school.name}`}
+            alt={`Logo de ${school.name}`}
             className="school-logo-hero"
           />
         ) : (
@@ -179,6 +181,16 @@ function SchoolPage() {
         <p className="eyebrow">Quiénes somos</p>
         <h3>Conoce la carrera</h3>
         <div className="school-description-content">{descriptionBlocks}</div>
+      </section>
+
+      <section className="school-description">
+        <p className="eyebrow">Historia</p>
+        <h3>Trayectoria de la escuela</h3>
+        <div className="school-description-content">
+          {historyItems.map((item) => (
+            <p key={item}>{item}</p>
+          ))}
+        </div>
       </section>
 
       {socialLinks.length > 0 && (

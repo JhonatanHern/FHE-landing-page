@@ -151,24 +151,24 @@ export const schoolLogos = {
     source: 'oficial',
   },
   'bibliotecologia-archivologia': {
-    src: `/logos-escuelas/${encodeURIComponent('Centro de Estudiantes de la Escuela de Bibliotecología y Archivología UCV.jpg')}`,
-    source: 'centro-estudiantes',
+    src: `/logos-escuelas/${encodeURIComponent('bibliotecologia y archivologia.png')}`,
+    source: 'oficial',
   },
   historia: {
-    src: `/logos-escuelas/${encodeURIComponent('Centro de Estudiantes de la Escuela de Historia UCV.jpg')}`,
-    source: 'centro-estudiantes',
+    src: `/logos-escuelas/${encodeURIComponent('historia.png')}`,
+    source: 'oficial',
   },
   geografia: {
-    src: `/logos-escuelas/${encodeURIComponent('Centro de Estudiantes de la Escuela de Gegrafía UCV.jpg')}`,
-    source: 'centro-estudiantes',
+    src: `/logos-escuelas/${encodeURIComponent('geografia.png')}`,
+    source: 'oficial',
   },
   'idiomas-modernos': {
-    src: `/logos-escuelas/${encodeURIComponent('Centro de Estudiantes de la Escuela de Idiomas Modernos UCV.jpg')}`,
-    source: 'centro-estudiantes',
+    src: `/logos-escuelas/${encodeURIComponent('idiomas modernos.png')}`,
+    source: 'oficial',
   },
   psicologia: {
-    src: `/logos-escuelas/${encodeURIComponent('Centro de Estudiantes de la Escuela de Psicología UCV.jpg')}`,
-    source: 'centro-estudiantes',
+    src: `/logos-escuelas/${encodeURIComponent('psicologia.png')}`,
+    source: 'oficial',
   },
 }
 
@@ -568,6 +568,59 @@ export const schoolDescriptionBlocks = {
       En resumen, el psicólogo cumple un rol fundamental en la comprensión y abordaje de dimensiones mentales y
       emocionales para fortalecer el bienestar social.
     </p>,
+  ],
+}
+
+export const schoolHistoryItems = {
+  historia: [
+    'Tras la caída del régimen de Pérez Jiménez en 1958, la antigua sección de Historia se formalizó como Escuela con estructura académica propia.',
+    'Su desarrollo intelectual estuvo marcado por la "Nueva Historia" (Bloch, Febvre y Braudel), que desplazó el enfoque en figuras aisladas hacia el estudio de procesos y estructuras de larga duración.',
+    'Desde finales de los años 60, la Renovación Universitaria orientó la investigación hacia problemas estructurales del país, como el petróleo, el régimen de tierras y la diversidad étnica regional.',
+  ],
+  'bibliotecologia-archivologia': [
+    'El 24 de febrero de 1948 el Consejo Universitario aprobó la creación de la Escuela de Bibliotecología y Archivología, y sus actividades iniciaron el 1 de marzo de 1948 bajo la dirección de la profesora Blanca Álvarez Freites.',
+    'En sus inicios funcionó con un plan de dos años dirigido a personal de bibliotecas del país, con doce asignaturas y manejo instrumental de un idioma moderno.',
+    'El 27 de julio de 1950 egresó la primera cohorte con el título de Técnico en Biblioteconomía, y en 1956 comenzaron formalmente los estudios del área de Archivología.',
+  ],
+  psicologia: [
+    'La psicología en Venezuela surgió articulada con Filosofía, Medicina y Educación, y comenzó su formalización académica con la asignatura creada en 1946.',
+    'En 1950 se creó el Instituto de Psicología y Psicotecnia, orientado especialmente a la orientación vocacional y al desarrollo técnico del área.',
+    'La consolidación universitaria llegó con la fundación de la Escuela de Psicología en 1958, cuyo diseño curricular de los años 70 sigue siendo referencia para la formación actual.',
+  ],
+  geografia: [
+    'La trayectoria de la Escuela de Geografía inició en 1949 con la creación del Instituto de Antropología y Geografía.',
+    'Luego de varias reconfiguraciones —incluyendo etapas como Departamento (1954) y Sección (1956)— la carrera comenzó formalmente en octubre de 1956, bajo la dirección del Dr. Juan Jones Parra.',
+    'Con la democratización de 1958 se consolidó como Escuela, dirigida por la Dra. Mercedes Fermín Gómez, se extendió a cinco años y alcanzó su primera promoción en 1960.',
+  ],
+  filosofia: [
+    'La Escuela de Filosofía de la UCV, establecida en 1946, representó el primer esfuerzo formal por profesionalizar el pensamiento filosófico en Venezuela.',
+    'Su dirección inicial estuvo a cargo de Juan David García Bacca, figura clave en la consolidación de una tradición filosófica académica dentro de la facultad.',
+    'Desde su origen, su misión ha combinado análisis ético y científico para construir marcos teóricos rigurosos sobre la realidad contemporánea.',
+  ],
+  'comunicacion-social': [
+    'Nació en 1947 como Escuela de Periodismo, en el contexto de apertura democrática del llamado Trienio.',
+    'Con el tiempo evolucionó hacia Comunicación Social, incorporando teoría de la comunicación, semiótica y análisis de medios.',
+    'Su legado incluye figuras como Oscar Yanes, pionero del periodismo audiovisual y referente para varias generaciones de estudiantes.',
+  ],
+  'idiomas-modernos': [
+    'La Escuela de Idiomas Modernos se fundó en noviembre de 1972 para responder a la creciente necesidad de mediación lingüística e intercultural del país.',
+    'Comenzó a operar plenamente en septiembre de 1974 bajo la dirección del profesor Carlos A. Saavedra.',
+    'Se consolidó por su rigor en la formación de traductores e intérpretes en varias lenguas, manteniendo prestigio académico nacional e internacional.',
+  ],
+  letras: [
+    'Desde 1946, la Escuela de Letras de la UCV ha centrado su trayectoria en el estudio del lenguaje y la literatura como fenómenos históricos, culturales y creativos.',
+    'Su propuesta académica articula el análisis de lo escrito y lo hablado con la comprensión de la realidad colectiva.',
+    'A través de la investigación y la innovación, ha formado profesionales dedicados a la interpretación crítica y a la difusión del saber humanístico.',
+  ],
+  educacion: [
+    'La Escuela de Educación fue creada en 1953 y marcó un hito al otorgar estatus universitario formal a la formación docente, diferenciándose de las antiguas escuelas normales.',
+    'A lo largo de las décadas, su trabajo académico ha incidido en el rumbo de políticas y prácticas educativas del país.',
+    'Entre sus referentes históricos destaca Rafael Fernández Heres, investigador y gestor público con fuerte legado en la memoria educativa venezolana.',
+  ],
+  artes: [
+    'La Escuela de Artes fue inaugurada el 18 de abril de 1978, como una de las dependencias más recientes de la Facultad de Humanidades y Educación.',
+    'Su origen parte de un proyecto iniciado en 1972 por Santiago Magariños, enriquecido por aportes de intelectuales como Antonio Pasquali, Isaac Chocrón y Marta Traba.',
+    'Desde su inicio, priorizó la formación en gestión cultural, crítica e investigación, consolidándose bajo la dirección de Inocente Palacios y pionera en postgrados de musicología y teatro latinoamericano.',
   ],
 }
 
