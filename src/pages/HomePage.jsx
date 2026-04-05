@@ -32,9 +32,9 @@ function HomePage() {
             ¿Te gustaría ser un humanista formado en la universidad #1 del país?
           </h2>
           <div className="hero-actions">
-            <Link className="btn btn-primary" to="/contacto">
+            {/* <Link className="btn btn-primary" to="/contacto">
               Sí, quiero formar parte
-            </Link>
+            </Link> */}
             <a className="btn btn-ghost" href="#facultad">
               Conocer la facultad
             </a>

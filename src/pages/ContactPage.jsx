@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Clock3, Globe, MapPin } from 'lucide-react'
-import { FaFacebookF, FaInstagram } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaTelegramPlane } from 'react-icons/fa'
 
 const Motion = motion
 
@@ -40,6 +40,7 @@ function ContactPage() {
           </h4>
           <p>
             Av. Los Ilustres, Ciudad Universitaria, Edif. Facultad de Humanidades y Educación, Los Chaguaramos, Caracas Venezuela.
+            Código Postal: 1050. Rif: G-20000062-7
           </p>
         </Motion.article>
         <Motion.article whileHover={{ y: -6 }} transition={{ duration: 0.2 }} className="info-card">
@@ -68,6 +69,12 @@ function ContactPage() {
             Facebook:{' '}
             <a className="social-link" href="https://www.facebook.com/fheucv" target="_blank" rel="noreferrer">
               <FaFacebookF className="icon-svg" aria-hidden="true" /> fheucv
+            </a>
+          </p>
+          <p>
+            Telegram:{' '}
+            <a className="social-link" href="https://t.me/fhyeucv" target="_blank" rel="noreferrer">
+              <FaTelegramPlane className="icon-svg" aria-hidden="true" /> @fhyeucv
             </a>
           </p>
         </Motion.article>
