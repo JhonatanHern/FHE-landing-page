@@ -26,8 +26,9 @@ function HomePage() {
         viewport={{ once: true, amount: 0.35 }}
       >
         <Motion.div variants={fadeInUp} className="hero-panel">
-          <p className="eyebrow">Universidad Central de Venezuela · Facultad de Humanidades y Educación</p>
-          <h1>¡Bienvenidos!</h1>
+          <img src="/assets/logo.png" alt="Logo Humanidades y Educación" className="hero-logo" />
+          <p className="eyebrow">Universidad Central de Venezuela</p>
+          <h1>Facultad de Humanidades y Educación</h1>
           <h2 className="hero-question">
             ¿Te gustaría ser un humanista formado en la universidad #1 del país?
           </h2>
