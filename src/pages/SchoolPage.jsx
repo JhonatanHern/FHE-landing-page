@@ -5,6 +5,7 @@ import { FaInstagram } from 'react-icons/fa'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import {
   mergedCareerSlugMap,
+  schoolDescriptionImages,
   schoolDescriptionBlocks,
   schoolHistoryItems,
   schoolIcons,
@@ -113,8 +114,29 @@ function SchoolPage() {
   const schoolLogo = schoolLogos[school.slug]
   const pensumDownloadSources = schoolPensumDownloadSources[school.slug] ?? []
   const descriptionBlocks = schoolDescriptionBlocks[school.slug] ?? []
+  const descriptionImage = schoolDescriptionImages[school.slug]
   const historyItems = schoolHistoryItems[school.slug] ?? []
   const socialLinks = schoolSocialLinks[school.slug] ?? []
+
+  const descriptionContent = [...descriptionBlocks]
+  if (descriptionImage) {
+    const firstParagraphIndex = descriptionContent.findIndex((block) => block?.type === 'p')
+    const imageNode = (
+      <img
+        key={`${school.slug}-description-photo`}
+        src={descriptionImage}
+        alt={`Fotografía de ${school.name}`}
+        className="school-description-photo"
+        loading="lazy"
+      />
+    )
+
+    if (firstParagraphIndex >= 0) {
+      descriptionContent.splice(firstParagraphIndex + 1, 0, imageNode)
+    } else {
+      descriptionContent.unshift(imageNode)
+    }
+  }
 
   return (
     <Motion.section
@@ -153,7 +175,7 @@ function SchoolPage() {
           </h4>
           <p>{school.profile}</p>
         </Motion.article>
-        <Motion.article whileHover={{ y: -6 }} transition={{ duration: 0.2 }} className="info-card">
+        {/* <Motion.article whileHover={{ y: -6 }} transition={{ duration: 0.2 }} className="info-card">
           <h4>
             <span className="icon-chip" aria-hidden="true">
               <Rocket className="icon-svg" />
@@ -165,7 +187,7 @@ function SchoolPage() {
               <li key={line}>{line}</li>
             ))}
           </ul>
-        </Motion.article>
+        </Motion.article> */}
         <Motion.article whileHover={{ y: -6 }} transition={{ duration: 0.2 }} className="info-card">
           <h4>
             <span className="icon-chip" aria-hidden="true">
@@ -180,7 +202,7 @@ function SchoolPage() {
       <section className="school-description">
         <p className="eyebrow">Quiénes somos</p>
         <h3>Conoce la carrera</h3>
-        <div className="school-description-content">{descriptionBlocks}</div>
+        <div className="school-description-content">{descriptionContent}</div>
       </section>
 
       <section className="school-description">

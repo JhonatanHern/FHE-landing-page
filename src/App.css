@@ -365,6 +365,34 @@
   max-width: none;
 }
 
+.accreditation-preview {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.accreditation-preview-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 50vh;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0.9rem;
+  border: 1px solid var(--border);
+}
+
+.accreditation-preview-content .muted {
+  margin: 0;
+  max-width: none;
+}
+
+.accreditation-preview-content .inline-link {
+  margin-top: 1rem;
+}
+
 .cards-grid {
   margin-top: 1.3rem;
   display: grid;
@@ -516,6 +544,56 @@
   min-height: 66vh;
 }
 
+.accreditation-page {
+  min-height: 66vh;
+}
+
+.accreditation-article-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: 1.35rem;
+}
+
+.accreditation-text-content {
+  min-width: 0;
+}
+
+.accreditation-article-header {
+  margin-bottom: 1rem;
+}
+
+.accreditation-title {
+  margin: 0.55rem 0 0.9rem;
+  font-size: clamp(1.9rem, 4.4vw, 2.8rem);
+  line-height: 1.08;
+  color: var(--text-h);
+}
+
+.accreditation-subtitle {
+  margin: 0;
+  max-width: none;
+}
+
+.accreditation-hero-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 78vh;
+  display: block;
+  margin: 0;
+  border-radius: 0.95rem;
+  border: 1px solid var(--border);
+}
+
+.accreditation-article-body {
+  margin-top: 0.9rem;
+  border-radius: 0.95rem;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  padding: 1.2rem;
+}
+
 .school-title {
   margin: 0.55rem 0 0.9rem;
   font-size: clamp(2rem, 4.8vw, 3.2rem);
@@ -582,6 +660,16 @@
 
 .school-description-content p {
   margin: 0.55rem 0;
+}
+
+.school-description-photo {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  border: 1px solid var(--border);
+  margin: 0.8rem 0 1rem;
 }
 
 .school-description-content ul {
@@ -1021,6 +1109,14 @@
   .history-paragraphs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .accreditation-article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .accreditation-hero-image {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1163,6 +1259,10 @@
 
   .history-paragraph-card {
     width: 100%;
+  }
+
+  .accreditation-preview {
+    grid-template-columns: 1fr;
   }
 }
 

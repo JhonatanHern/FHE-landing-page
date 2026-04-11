@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { BookOpen, Rocket } from 'lucide-react'
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import acreditacionImage from '../assets/acreditacion.png'
 import { fadeInUp, staggerContainer } from '../constants/animations'
 import { schoolIcons, schoolLogos, schools } from '../constants/schoolsData'
 
@@ -30,7 +31,7 @@ function HomePage() {
           <p className="eyebrow">Universidad Central de Venezuela</p>
           <h1>Facultad de Humanidades y Educación</h1>
           <h2 className="hero-question">
-            ¿Te gustaría ser un humanista formado en la universidad #1 del país?
+            ¿Te gustaría ser un humanista y educador formado en la universidad #1 del país?
           </h2>
           <div className="hero-actions">
             {/* <Link className="btn btn-primary" to="/contacto">
@@ -59,6 +60,32 @@ function HomePage() {
             Nuestra facultad integra docencia, investigación y extensión para responder a
             los retos del país desde el conocimiento humanista.
           </p>
+        </Motion.div>
+
+        <div className="section-break" aria-hidden="true" />
+
+        <Motion.div variants={fadeInUp} className="section-head" style={{ marginTop: '1.2rem' }}>
+          <p className="eyebrow">Acreditación</p>
+          <h3>Acreditación de la universidad</h3>
+
+          <div className="accreditation-preview">
+            <img
+              src={acreditacionImage}
+              alt="Acreditación internacional de la Universidad Central de Venezuela"
+              className="accreditation-preview-image"
+            />
+            <div className="accreditation-preview-content">
+              <p className="muted">
+                En marzo de 2026, la UCV obtuvo la acreditación internacional del Hcéres, una
+                certificación de alta rigurosidad que valida su excelencia académica bajo
+                estándares del Espacio Europeo de Educación Superior, con vigencia hasta febrero de
+                2031.
+              </p>
+              <Link className="inline-link" to="/acreditacion">
+                Leer más
+              </Link>
+            </div>
+          </div>
         </Motion.div>
 
         <div className="section-break" aria-hidden="true" />

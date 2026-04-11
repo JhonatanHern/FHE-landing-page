@@ -172,6 +172,15 @@ export const schoolLogos = {
   },
 }
 
+export const schoolDescriptionImages = {
+  artes: `/fotos-escuelas/${encodeURIComponent('arte.png')}`,
+  'bibliotecologia-archivologia': `/fotos-escuelas/${encodeURIComponent('bibliotecologia-y-archivologia.png')}`,
+  geografia: `/fotos-escuelas/${encodeURIComponent('geografia.png')}`,
+  historia: `/fotos-escuelas/${encodeURIComponent('historia.png')}`,
+  letras: `/fotos-escuelas/${encodeURIComponent('letras.png')}`,
+  psicologia: `/fotos-escuelas/${encodeURIComponent('psicologia.png')}`,
+}
+
 export const schoolPensumSources = {
   artes: [{ title: 'Artes', file: 'Artes Pensum.docx.md' }],
   'bibliotecologia-archivologia': [
