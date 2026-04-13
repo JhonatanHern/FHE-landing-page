@@ -393,6 +393,86 @@
   margin-top: 1rem;
 }
 
+.home-carousel {
+  margin-top: 1.2rem;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  /* border-radius: 0.95rem; */
+  /* border: 1px solid var(--border); */
+  background: var(--panel);
+  /* padding: 0.9rem; */
+}
+
+.home-carousel-frame {
+  position: relative;
+  overflow: hidden;
+  /* border-radius: 0.8rem; */
+  /* border: 1px solid var(--border); */
+  background: #000;
+  height: clamp(220px, 52vw, 50vh);
+}
+
+.home-carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--panel-soft) 88%, transparent);
+  color: var(--text-h);
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.carousel-control-left {
+  left: 0.65rem;
+}
+
+.carousel-control-right {
+  right: 0.65rem;
+}
+
+.carousel-dots {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+}
+
+.carousel-dot {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel-soft);
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
 .cards-grid {
   margin-top: 1.3rem;
   display: grid;
@@ -1263,6 +1343,16 @@
 
   .accreditation-preview {
     grid-template-columns: 1fr;
+  }
+
+  .home-carousel {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0.75rem;
+  }
+
+  .carousel-control {
+    display: none;
   }
 }
 

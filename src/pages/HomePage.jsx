@@ -1,21 +1,67 @@
-import { motion } from 'framer-motion'
-import { BookOpen, Rocket } from 'lucide-react'
-import { useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { BookOpen } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import acreditacionImage from '../assets/acreditacion.png'
 import { fadeInUp, staggerContainer } from '../constants/animations'
 import { schoolIcons, schoolLogos, schools } from '../constants/schoolsData'
 
 const Motion = motion
+const carouselImages = ['/carousel/1.png', '/carousel/2.png', '/carousel/3.png', '/carousel/4.png']
+const carouselAutoplayMs = 4000
+
+const carouselSlideVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? '100%' : '-100%',
+  }),
+  center: {
+    x: 0,
+  },
+  exit: (direction) => ({
+    x: direction > 0 ? '-100%' : '100%',
+  }),
+}
 
 function HomePage() {
   const location = useLocation()
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [slideDirection, setSlideDirection] = useState(1)
+
+  const showPreviousSlide = () => {
+    setSlideDirection(-1)
+    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)
+  }
+
+  const showNextSlide = () => {
+    setSlideDirection(1)
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
+  }
+
+  const goToSlide = (index) => {
+    if (index === currentSlide) {
+      return
+    }
+
+    setSlideDirection(index > currentSlide ? 1 : -1)
+    setCurrentSlide(index)
+  }
 
   useEffect(() => {
     if (location.state?.scrollToTop) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [location.state])
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSlideDirection(1)
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
+    }, carouselAutoplayMs)
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [currentSlide])
 
   return (
     <>
@@ -85,6 +131,58 @@ function HomePage() {
                 Leer más
               </Link>
             </div>
+          </div>
+        </Motion.div>
+
+        <div className="section-break" aria-hidden="true" />
+
+        <Motion.div variants={fadeInUp} className="home-carousel" aria-label="Galería de la facultad">
+          <div className="home-carousel-frame">
+            <AnimatePresence initial={false} custom={slideDirection} mode="sync">
+              <Motion.img
+                key={currentSlide}
+                src={carouselImages[currentSlide]}
+                alt={`Imagen ${currentSlide + 1} de la facultad`}
+                className="home-carousel-image"
+                loading="lazy"
+                custom={slideDirection}
+                variants={carouselSlideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.45, ease: 'easeInOut' }}
+              />
+            </AnimatePresence>
+
+            <button
+              type="button"
+              className="carousel-control carousel-control-left"
+              onClick={showPreviousSlide}
+              aria-label="Imagen anterior"
+            >
+              ‹
+            </button>
+
+            <button
+              type="button"
+              className="carousel-control carousel-control-right"
+              onClick={showNextSlide}
+              aria-label="Imagen siguiente"
+            >
+              ›
+            </button>
+          </div>
+
+          <div className="carousel-dots" aria-label="Indicadores del carrusel">
+            {carouselImages.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                className={`carousel-dot ${currentSlide === index ? 'active' : ''}`}
+                onClick={() => goToSlide(index)}
+                aria-label={`Ir a imagen ${index + 1}`}
+              />
+            ))}
           </div>
         </Motion.div>
 

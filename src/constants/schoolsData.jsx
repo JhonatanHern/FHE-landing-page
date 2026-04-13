@@ -175,8 +175,11 @@ export const schoolLogos = {
 export const schoolDescriptionImages = {
   artes: `/fotos-escuelas/${encodeURIComponent('arte.png')}`,
   'bibliotecologia-archivologia': `/fotos-escuelas/${encodeURIComponent('bibliotecologia-y-archivologia.png')}`,
+  'comunicacion-social': `/fotos-escuelas/${encodeURIComponent('comunicacion-social.png')}`,
+  educacion: `/fotos-escuelas/${encodeURIComponent('educacion.png')}`,
   geografia: `/fotos-escuelas/${encodeURIComponent('geografia.png')}`,
   historia: `/fotos-escuelas/${encodeURIComponent('historia.png')}`,
+  'idiomas-modernos': `/fotos-escuelas/${encodeURIComponent('idiomas-modernos.png')}`,
   letras: `/fotos-escuelas/${encodeURIComponent('letras.png')}`,
   psicologia: `/fotos-escuelas/${encodeURIComponent('psicologia.png')}`,
 }
