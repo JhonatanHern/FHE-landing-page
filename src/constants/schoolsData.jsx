@@ -151,37 +151,37 @@ export const schoolLogos = {
     source: 'oficial',
   },
   'bibliotecologia-archivologia': {
-    src: `/logos-escuelas/${encodeURIComponent('bibliotecologia y archivologia.png')}`,
+    src: `/logos-escuelas/${encodeURIComponent('bibliotecologia y archivologia.webp')}`,
     source: 'oficial',
   },
   historia: {
-    src: `/logos-escuelas/${encodeURIComponent('historia.png')}`,
+    src: `/logos-escuelas/${encodeURIComponent('historia.webp')}`,
     source: 'oficial',
   },
   geografia: {
-    src: `/logos-escuelas/${encodeURIComponent('geografia.png')}`,
+    src: `/logos-escuelas/${encodeURIComponent('geografia.webp')}`,
     source: 'oficial',
   },
   'idiomas-modernos': {
-    src: `/logos-escuelas/${encodeURIComponent('idiomas modernos.png')}`,
+    src: `/logos-escuelas/${encodeURIComponent('idiomas modernos.webp')}`,
     source: 'oficial',
   },
   psicologia: {
-    src: `/logos-escuelas/${encodeURIComponent('psicologia.png')}`,
+    src: `/logos-escuelas/${encodeURIComponent('psicologia.webp')}`,
     source: 'oficial',
   },
 }
 
 export const schoolDescriptionImages = {
-  artes: `/fotos-escuelas/${encodeURIComponent('arte.png')}`,
-  'bibliotecologia-archivologia': `/fotos-escuelas/${encodeURIComponent('bibliotecologia-y-archivologia.png')}`,
-  'comunicacion-social': `/fotos-escuelas/${encodeURIComponent('comunicacion-social.png')}`,
-  educacion: `/fotos-escuelas/${encodeURIComponent('educacion.png')}`,
-  geografia: `/fotos-escuelas/${encodeURIComponent('geografia.png')}`,
-  historia: `/fotos-escuelas/${encodeURIComponent('historia.png')}`,
-  'idiomas-modernos': `/fotos-escuelas/${encodeURIComponent('idiomas-modernos.png')}`,
-  letras: `/fotos-escuelas/${encodeURIComponent('letras.png')}`,
-  psicologia: `/fotos-escuelas/${encodeURIComponent('psicologia.png')}`,
+  artes: `/fotos-escuelas/${encodeURIComponent('arte.webp')}`,
+  'bibliotecologia-archivologia': `/fotos-escuelas/${encodeURIComponent('bibliotecologia-y-archivologia.webp')}`,
+  'comunicacion-social': `/fotos-escuelas/${encodeURIComponent('comunicacion-social.webp')}`,
+  educacion: `/fotos-escuelas/${encodeURIComponent('educacion.webp')}`,
+  geografia: `/fotos-escuelas/${encodeURIComponent('geografia.webp')}`,
+  historia: `/fotos-escuelas/${encodeURIComponent('historia.webp')}`,
+  'idiomas-modernos': `/fotos-escuelas/${encodeURIComponent('idiomas-modernos.webp')}`,
+  letras: `/fotos-escuelas/${encodeURIComponent('letras.webp')}`,
+  psicologia: `/fotos-escuelas/${encodeURIComponent('psicologia.webp')}`,
 }
 
 export const schoolPensumSources = {

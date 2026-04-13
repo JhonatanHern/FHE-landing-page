@@ -2,12 +2,12 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { BookOpen } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import acreditacionImage from '../assets/acreditacion.png'
+import acreditacionImage from '../assets/acreditacion.webp'
 import { fadeInUp, staggerContainer } from '../constants/animations'
 import { schoolIcons, schoolLogos, schools } from '../constants/schoolsData'
 
 const Motion = motion
-const carouselImages = ['/carousel/1.png', '/carousel/2.png', '/carousel/3.png', '/carousel/4.png']
+const carouselImages = ['/carousel/1.webp', '/carousel/2.webp', '/carousel/3.webp', '/carousel/4.webp']
 const carouselAutoplayMs = 4000
 
 const carouselSlideVariants = {
@@ -73,7 +73,7 @@ function HomePage() {
         viewport={{ once: true, amount: 0.35 }}
       >
         <Motion.div variants={fadeInUp} className="hero-panel">
-          <img src="/assets/logo.png" alt="Logo Humanidades y Educación" className="hero-logo" />
+          <img src="/assets/logo.webp" alt="Logo Humanidades y Educación" className="hero-logo" />
           <p className="eyebrow">Universidad Central de Venezuela</p>
           <h1>Facultad de Humanidades y Educación</h1>
           <h2 className="hero-question">

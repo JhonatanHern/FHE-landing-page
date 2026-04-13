@@ -17,7 +17,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-column footer-brand">
-          <img src="/assets/logo.png" alt="Logo Humanidades y Educación" className="footer-logo" />
+          <img src="/assets/logo.webp" alt="Logo Humanidades y Educación" className="footer-logo" />
           <p className="footer-brand-title">Facultad de Humanidades y Educación</p>
           <p>Formación crítica, investigación y compromiso social para transformar el país.</p>
         </div>

@@ -147,7 +147,7 @@ function SchoolPage() {
     >
       <div
         className="school-header-visual"
-        style={{ backgroundImage: "url('/assets/mural-dark.png')" }}
+        style={{ backgroundImage: "url('/assets/mural-dark.webp')" }}
       >
         {schoolLogo ? (
           <img

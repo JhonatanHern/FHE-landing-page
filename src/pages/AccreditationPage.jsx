@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import acreditacionMarkdown from '../../Guion de Exposición Expandido.md?raw'
-import acreditacionImage from '../assets/acreditacion.png'
+import acreditacionImage from '../assets/acreditacion.webp'
 import { markdownComponents } from '../constants/markdownComponents'
 
 const Motion = motion

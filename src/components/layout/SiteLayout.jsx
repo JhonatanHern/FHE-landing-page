@@ -20,7 +20,7 @@ function SiteLayout({ children }) {
       <RouteScrollHandler />
       <header className="topbar">
         <Link className="brand" to="/">
-          <img src="/assets/logo.png" alt="Logo Humanidades y Educación" className="brand-logo" />
+          <img src="/assets/logo.webp" alt="Logo Humanidades y Educación" className="brand-logo" />
           <span className="brand-title">Facultad de Humanidades y Educación</span>
         </Link>
         <button
